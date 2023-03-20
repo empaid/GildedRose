@@ -20,9 +20,9 @@ describe('Gilded Rose', () => {
   });
   describe('SellIn date has passed', () => {
     it('should reduce quality twice as fast', () => {
-      const gildedRose = new GildedRose([new Item('foo', -1, 6)]);
+      const gildedRose = new GildedRose([new Item('foo', 0, 6)]);
       const items = gildedRose.updateQuality();
-      expect(items[0].sellIn).toBe(-2);
+      expect(items[0].sellIn).toBe(-1);
       expect(items[0].quality).toBe(4);
     });
     it('should not reduce quality to lower than 0', () => {
