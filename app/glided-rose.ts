@@ -30,6 +30,8 @@ export class GildedRose {
         handleBackstagePasses(this.items[i]);
       else if (name === 'Sulfuras, Hand of Ragnaros') 
         handleSulfuras(this.items[i]);
+      else if (name === 'Conjured')
+        handleConjured(this.items[i]);
       else 
         handleRestGoods(this.items[i]);
 
@@ -60,6 +62,11 @@ function handleSulfuras(item: Item) {
 function handleRestGoods(item: Item) {
   item.quality -= 1;
   if( item.sellIn < 0 ) item.quality -= 1;
+}
+
+function handleConjured(item: Item) {
+  item.quality -= 2;
+  // if( item.sellIn < 0 ) item.quality -= 2; #should i reduce the quantity by 4 if sellIn is negative
 }
 
 function handleQualityBounds(item: Item) {
