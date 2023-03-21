@@ -54,6 +54,13 @@ describe('Gilded Rose', () => {
     expect(items[0].quality).toBe(4);
   });
 
+  it('should the Quality of "Sulfuras, Hand of Ragnaros" can be more than 50', () => {
+    const gildedRose = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 2, 80)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toBe(2);
+    expect(items[0].quality).toBe(80);
+  });
+
 
   describe('"Backstage passes to a TAFKAL80ETC concert', () => {
     
