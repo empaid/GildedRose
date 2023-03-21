@@ -28,8 +28,10 @@ export class GildedRose {
         handleAgedBrie(this.items[i]);
       else if (name === 'Backstage passes to a TAFKAL80ETC concert')
         handleBackstagePasses(this.items[i]);
-      else if (name === 'Sulfuras, Hand of Ragnaros') 
+      else if (name === 'Sulfuras, Hand of Ragnaros') {
         handleSulfuras(this.items[i]);
+        continue;
+      }
       else if (name === 'Conjured')
         handleConjured(this.items[i]);
       else 
